@@ -1,0 +1,29 @@
+@Host=http://127.0.0.1:59476
+@LocalHost=http://127.0.0.1:8090
+
+POST {{LocalHost}}/api/department HTTP/1.1
+Content-Type: application/json
+
+{
+  "departmentName":"Legal"
+}
+
+### Get all employees
+GET {{LocalHost}}/api/department HTTP/1.1
+Content-Type: application/json
+
+### Get employee by ID
+GET {{LocalHost}}/api/department/3 HTTP/1.1
+Content-Type: application/json
+
+### Delete employee by ID
+DELETE {{LocalHost}}/api/department/10 HTTP/1.1
+Content-Type: application/json
+###
+
+PUT {{LocalHost}}/api/department/2 HTTP/1.1
+Content-Type: application/json
+
+{
+    "departmentName": "Finance"
+}
