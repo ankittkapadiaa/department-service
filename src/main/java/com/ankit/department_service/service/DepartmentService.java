@@ -18,4 +18,6 @@ public interface DepartmentService {
 
     Map<String, Object> deleteDepartmentById(Long departmentId);
 
+    List<DepartmentCreateResponse> getDepartmentsByIds(List<Long> ids);
+
 }

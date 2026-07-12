@@ -67,4 +67,11 @@ public class DepartmentServiceImpl implements DepartmentService {
         response.put("success", true);
         return response;
     }
+
+    @Override
+    public List<DepartmentCreateResponse> getDepartmentsByIds(List<Long> ids) {
+        return departmentRepository.findAllById(ids).stream()
+                .map(department -> modelMapper.map(department, DepartmentCreateResponse.class))
+                .toList();
+    }
 }

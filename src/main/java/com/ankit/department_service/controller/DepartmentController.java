@@ -52,4 +52,11 @@ public class DepartmentController {
     public Map<String, Object> deleteDepartmentById(@PathVariable Long departmentId) {
         return departmentService.deleteDepartmentById(departmentId);
     }
+
+    @PostMapping("batch")
+    public List<DepartmentCreateResponse> getDepartmentsByIds(@RequestBody List<Long> ids) {
+
+        return departmentService.getDepartmentsByIds(ids);
+    }
+
 }
