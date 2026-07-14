@@ -1,20 +1,22 @@
 spring:
     application:
         name: department-service
-    datasource:
-        url: jdbc:postgresql://${POSTGRES_HOST:localhost}:${POSTGRES_PORT:5432}/${DEPARTMENT_POSTGRES_DB:department_db}
-        username: ${POSTGRES_USER:employee_user}
-        password: ${POSTGRES_PASSWORD:employee_password}
-        driver-class-name: org.postgresql.Driver
-    jpa:
-        hibernate:
-            ddl-auto: update
-        show-sql: true
-        database-platform: org.hibernate.dialect.PostgreSQLDialect
-management:
-    endpoints:
-        web:
-            exposure:
-                include: "*"
-server:
-    port: 8090
+    config:
+        import: optional:configserver:${EUREKA_SERVER_ADDRESS:http://localhost:8888}
+#     datasource:
+#         url: jdbc:postgresql://${POSTGRES_HOST:localhost}:${POSTGRES_PORT:5432}/${DEPARTMENT_POSTGRES_DB:department_db}
+#         username: ${POSTGRES_USER:employee_user}
+#         password: ${POSTGRES_PASSWORD:employee_password}
+#         driver-class-name: org.postgresql.Driver
+#     jpa:
+#         hibernate:
+#             ddl-auto: update
+#         show-sql: true
+#         database-platform: org.hibernate.dialect.PostgreSQLDialect
+# management:
+#     endpoints:
+#         web:
+#             exposure:
+#                 include: "*"
+# server:
+#     port: 8090
